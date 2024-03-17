@@ -16,7 +16,7 @@ vim.keymap.set('n', 'fw', builtin.grep_string, { desc = '[F]ind [W]ord' })
 
 -- telescope browser
 
-vim.api.nvim_set_keymap('n', 'ff', ':Telescope file_browser<CR>', opts)
+vim.api.nvim_set_keymap('n', 'ff', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', opts)
 
 return {
   {
