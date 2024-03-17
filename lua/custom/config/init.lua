@@ -11,12 +11,16 @@ keymap.set('n', '<C-s>', ':w<CR>', opts)
 -- telescope remap
 
 local builtin = require 'telescope.builtin'
-vim.keymap.set('n', 'fa', builtin.find_files, { desc = '[F]ind [A]ll files' })
-vim.keymap.set('n', 'fw', builtin.grep_string, { desc = '[F]ind [W]ord' })
+keymap.set('n', 'fa', builtin.find_files, { desc = '[F]ind [A]ll files' })
+keymap.set('n', 'fw', builtin.grep_string, { desc = '[F]ind [W]ord' })
 
 -- telescope browser
 
 vim.api.nvim_set_keymap('n', 'ff', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', opts)
+
+-- lazy git
+
+keymap.set('n', '<leader>gg', ':LazyGit<CR>', opts)
 
 return {
   {
@@ -37,5 +41,15 @@ return {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
     dependencies = { 'nvim-lua/plenary.nvim' }, -- Check the init.vim on root of project. Harpoon config is there
+  },
+  {
+    'kdheepak/lazygit.nvim',
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim',
+    },
+    config = function()
+      require('telescope').load_extension 'lazygit'
+    end,
   },
 }
