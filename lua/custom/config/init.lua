@@ -7,6 +7,8 @@ local keymap = vim.keymap
 
 keymap.set('i', 'jj', '<ESC>', opts)
 keymap.set('n', '<C-s>', ':w<CR>', opts)
+keymap.set('n', 'S', ':%s/\\C')
+keymap.set('n', 'C', 'ciw')
 
 -- telescope remap
 
