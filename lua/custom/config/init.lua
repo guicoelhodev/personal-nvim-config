@@ -33,4 +33,9 @@ return {
       },
     },
   },
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' }, -- Check the init.vim on root of project. Harpoon config is there
+  },
 }
