@@ -54,4 +54,5 @@ return {
       require('telescope').load_extension 'lazygit'
     end,
   },
+  { 'neoclide/coc.nvim', branch = 'master', build = 'npm ci' },
 }
