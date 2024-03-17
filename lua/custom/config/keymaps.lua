@@ -15,6 +15,6 @@ vim.api.nvim_set_keymap('n', '<Space>x', ':bd<CR>', opts)
 
 -- lazy git
 
-keymap.set('n', '<leader>gg', ':LazyGit<CR>', opts)
+keymap.set('n', '<leader>g', ':LazyGit<CR>', opts)
 
 return {}
