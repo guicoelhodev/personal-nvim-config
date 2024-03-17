@@ -344,6 +344,10 @@ require('lazy').setup({
         harpoon:list():append()
       end)
 
+      vim.keymap.set('n', 'wu', function()
+        harpoon:list():remove()
+      end)
+
       vim.keymap.set('n', 'wh', function()
         harpoon:list():select(1)
       end)
