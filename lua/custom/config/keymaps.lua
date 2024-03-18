@@ -21,7 +21,6 @@ vim.api.nvim_set_keymap('n', '<leader>d', '<Plug>(coc-definition)', opts)
 vim.api.nvim_set_keymap('n', '<Space>x', ':bd<CR>', opts)
 
 -- save file
-keymap.set('n', '<C-s>', ':w<CR>', opts)
 
 -- lazy git
 keymap.set('n', '<leader>g', ':LazyGit<CR>', opts)
@@ -29,5 +28,11 @@ keymap.set('n', '<leader>g', ':LazyGit<CR>', opts)
 -- move with selected block
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv' '>+1<CR>gv=gv'")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv' '<-2<CR>gv=gv' ")
+
+-- format with coc-prettier
+vim.keymap.set('n', 'fm', ':CocCommand prettier.formatFile<CR>')
+
+-- format and save
+vim.keymap.set('n', '<C-s>', ':CocCommand prettier.forceFormatDocument<CR> :w<CR>')
 
 return {}
