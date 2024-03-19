@@ -30,7 +30,7 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv' '<-2<CR>gv=gv' ")
 vim.keymap.set('n', 'fm', ':CocCommand prettier.formatFile<CR>')
 
 -- format and save
-vim.keymap.set('n', '<C-s>', ':CocCommand prettier.forceFormatDocument<CR> :w<CR>')
+vim.keymap.set('n', '<C-s>', ':Neoformat<CR> :w<CR>')
 
 -- LSP and cmp
 local cmp = require 'cmp'
