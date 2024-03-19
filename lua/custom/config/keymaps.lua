@@ -35,4 +35,19 @@ vim.keymap.set('n', 'fm', ':CocCommand prettier.formatFile<CR>')
 -- format and save
 vim.keymap.set('n', '<C-s>', ':CocCommand prettier.forceFormatDocument<CR> :w<CR>')
 
+-- LSP and cmp
+local cmp = require 'cmp'
+local luasnip = require 'luasnip'
+
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = {
+    ['<Tab>'] = cmp.mapping.confirm { select = false },
+  },
+}
+
 return {}
