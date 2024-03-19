@@ -14,9 +14,6 @@ keymap.set('n', 'S', ':%s/\\C')
 --- delete word and enter on insert mode
 keymap.set('n', 'C', 'ciw')
 
--- go to definition on typescript LSP
-vim.api.nvim_set_keymap('n', '<leader>d', '<Plug>(coc-definition)', opts)
-
 -- close current buffer (file)
 vim.api.nvim_set_keymap('n', '<Space>x', ':bd<CR>', opts)
 
