@@ -31,6 +31,10 @@ ls.add_snippets('typescriptreact', {
   ),
 })
 
+ls.add_snippets('typescript', {
+  s('log', fmt([[console.log('{}')]], { i(1, '') })),
+})
+
 ls.add_snippets('typescriptreact', {
   s(
     'usef', -- create useEffect
@@ -59,7 +63,7 @@ ls.add_snippets('typescriptreact', {
       }};
     ]],
       {
-        i(1, 'function'),
+        i(1, ''),
       }
     )
   ),
@@ -75,7 +79,7 @@ ls.add_snippets('typescriptreact', {
       }};
     ]],
       {
-        i(1, 'function'),
+        i(1, ''),
       }
     )
   ),
@@ -91,7 +95,7 @@ ls.add_snippets('typescriptreact', {
       }};
     ]],
       {
-        i(1, 'function'),
+        i(1, ''),
       }
     )
   ),
@@ -163,7 +167,7 @@ ls.add_snippets('typescriptreact', {
 
         describe('Suite test for {} , () => {{
           it('Should be render correcly', () => {{
-            const screen = screen(<{} />);
+            const screen = render(<{} />);
 
             expect(screen.container).toBeInTheDocument()
           }})
@@ -183,7 +187,7 @@ ls.add_snippets('typescriptreact', {
 
 ls.add_snippets('typescriptreact', {
   s(
-    'query', --- useQuery
+    'mkquery', --- useQuery
     fmt(
       [[
 
