@@ -99,7 +99,7 @@ ls.add_snippets('typescriptreact', {
 
 ls.add_snippets('typescriptreact', {
   s(
-    'test', -- create base test
+    'ctest', -- create base test
     fmt(
       [[
         it('{}', () => {{
@@ -179,6 +179,50 @@ ls.add_snippets('typescriptreact', {
   ),
 })
 
+---------------------------------- REACT QUERY SNIPPETS --------------------------------
+
+ls.add_snippets('typescriptreact', {
+  s(
+    'query', --- useQuery
+    fmt(
+      [[
+
+        import {{ AxiosError }} from 'axios';
+        import {{ useQuery }} from 'react-query';
+        
+        type TParams = {{
+
+        }};
+
+        type TResponse = {{
+
+        }}
+
+        const {} = async(params: TParams) => {{
+          try {{
+            const response = await API.get<TResponse>();
+
+            return response.data;
+          }} catch (e) {{
+              const error = e as AxiosError;
+
+              throw new Error(error.message)
+          }}
+        }};
+
+        export const useGet{hook} = (params: TParams) => {{
+          return useQuery(['GET_{}', params], async() => await {}(params))
+        }}
+      ]],
+      {
+        i(1, ''),
+        hook = l(l._1:sub(1, 1):upper() .. l._1:sub(2, -1), 1),
+        rep(1),
+        rep(1),
+      }
+    )
+  ),
+})
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
