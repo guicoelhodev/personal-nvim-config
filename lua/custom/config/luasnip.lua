@@ -10,7 +10,11 @@ local l = require('luasnip.extras').l
 -----------------------------------------------------------------------------------------
 ------------------------------- REACT TYPESCRIPT CONFIG ---------------------------------
 -----------------------------------------------------------------------------------------
---
+
+local function createTag(tagName)
+  return s(tagName, fmt('<{}>{}</{}>', { t(tagName), i(0), t(tagName) }))
+end
+
 ls.add_snippets('typescriptreact', {
   s(
     'mkc', -- make component
@@ -46,6 +50,24 @@ ls.add_snippets('typescriptreact', {
       {
         i(1, 'state'),
         setter = l(l._1:sub(1, 1):upper() .. l._1:sub(2, -1), 1),
+      }
+    )
+  ),
+})
+
+ls.add_snippets('typescriptreact', {
+  s(
+    'usef', -- create useEffect
+    fmt(
+      [[
+
+      useEffect(() => {{
+
+      }}, [{}])
+
+    ]],
+      {
+        i(1, 'state'),
       }
     )
   ),
@@ -99,6 +121,15 @@ ls.add_snippets('typescriptreact', {
   ),
 })
 
+local commonTags = { 'div', 'section', 'article', 'header', 'footer', 'aside', 'main', 'ul', 'li', 'ol' }
+
+local snippets = {}
+
+for _, element in ipairs(commonTags) do
+  table.insert(snippets, createTag(element))
+end
+
+ls.add_snippets('typescriptreact', snippets)
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
