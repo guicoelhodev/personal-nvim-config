@@ -137,13 +137,14 @@ type T{} = {{}};
 
 export const {}: FC<T{}> = (props) => {{
   return (
-    <div>{}</div>
+    <div>
+
+    </div>
   );
 }};
       ]],
       {
         i(1, 'MyComponent'),
-        rep(1),
         rep(1),
         rep(1),
       }
