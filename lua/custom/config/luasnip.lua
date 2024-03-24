@@ -15,7 +15,7 @@ local function createTag(tagName)
   return s(tagName, fmt('<{}>{}</{}>', { t(tagName), i(0), t(tagName) }))
 end
 
-ls.add_snippets('typescriptreact', {
+ls.add_snippets('typescript', {
   s(
     'us', -- create useState
     fmt(
@@ -32,10 +32,10 @@ ls.add_snippets('typescriptreact', {
 })
 
 ls.add_snippets('typescript', {
-  s('log', fmt([[console.log('{}')]], { i(1, '') })),
+  s('clog', fmt([[console.log('{}')]], { i(1, '') })),
 })
 
-ls.add_snippets('typescriptreact', {
+ls.add_snippets('typescript', {
   s(
     'usef', -- create useEffect
     fmt(
@@ -53,9 +53,9 @@ ls.add_snippets('typescriptreact', {
   ),
 })
 
-ls.add_snippets('typescriptreact', {
+ls.add_snippets('typescript', {
   s(
-    'fn', -- create function
+    'cfn', -- create function
     fmt(
       [[
       const {} = (arg) => {{
@@ -69,9 +69,9 @@ ls.add_snippets('typescriptreact', {
   ),
 })
 
-ls.add_snippets('typescriptreact', {
+ls.add_snippets('typescript', {
   s(
-    'xfn', -- create export function
+    'cxfn', -- create export function
     fmt(
       [[
       export const {} = (arg) => {{
@@ -85,9 +85,9 @@ ls.add_snippets('typescriptreact', {
   ),
 })
 
-ls.add_snippets('typescriptreact', {
+ls.add_snippets('typescript', {
   s(
-    'afn', -- create async function
+    'cafn', -- create async function
     fmt(
       [[
       const {} = async (arg) => {{
@@ -101,7 +101,7 @@ ls.add_snippets('typescriptreact', {
   ),
 })
 
-ls.add_snippets('typescriptreact', {
+ls.add_snippets('typescript', {
   s(
     'ctest', -- create base test
     fmt(
@@ -126,11 +126,11 @@ for _, element in ipairs(commonTags) do
   table.insert(snippets, createTag(element))
 end
 
-ls.add_snippets('typescriptreact', snippets)
+ls.add_snippets('typescript', snippets)
 
 ------------------------------------------------- LARGE SNIPPETS -----------------------------------------------
 
-ls.add_snippets('typescriptreact', {
+ls.add_snippets('typescript', {
   s(
     'mkcomp', -- make component
     fmt(
@@ -156,7 +156,7 @@ export const {}: FC<T{}> = (props) => {{
   ),
 })
 
-ls.add_snippets('typescriptreact', {
+ls.add_snippets('typescript', {
   s(
     'mktest', -- make new test
     fmt(
@@ -185,7 +185,7 @@ ls.add_snippets('typescriptreact', {
 
 ---------------------------------- REACT QUERY SNIPPETS --------------------------------
 
-ls.add_snippets('typescriptreact', {
+ls.add_snippets('typescript', {
   s(
     'mkquery', --- useQuery
     fmt(
