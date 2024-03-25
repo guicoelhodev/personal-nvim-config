@@ -15,7 +15,7 @@ local function createTag(tagName)
   return s(tagName, fmt('<{}>{}</{}>', { t(tagName), i(0), t(tagName) }))
 end
 
-ls.add_snippets('typescript', {
+ls.add_snippets('typescriptreact', {
   s(
     'us', -- create useState
     fmt(
@@ -31,11 +31,14 @@ ls.add_snippets('typescript', {
   ),
 })
 
-ls.add_snippets('typescript', {
+local consoleLog = {
   s('clog', fmt([[console.log('{}')]], { i(1, '') })),
-})
+}
 
-ls.add_snippets('typescript', {
+ls.add_snippets('typescriptreact', consoleLog)
+ls.add_snippets('typescript', consoleLog)
+
+ls.add_snippets('typescriptreact', {
   s(
     'usef', -- create useEffect
     fmt(
@@ -53,7 +56,7 @@ ls.add_snippets('typescript', {
   ),
 })
 
-ls.add_snippets('typescript', {
+local createFn = {
   s(
     'cfn', -- create function
     fmt(
@@ -67,25 +70,9 @@ ls.add_snippets('typescript', {
       }
     )
   ),
-})
+}
 
-ls.add_snippets('typescript', {
-  s(
-    'cxfn', -- create export function
-    fmt(
-      [[
-      export const {} = (arg) => {{
-
-      }};
-    ]],
-      {
-        i(1, ''),
-      }
-    )
-  ),
-})
-
-ls.add_snippets('typescript', {
+local createAsyncFn = {
   s(
     'cafn', -- create async function
     fmt(
@@ -99,9 +86,14 @@ ls.add_snippets('typescript', {
       }
     )
   ),
-})
+}
+ls.add_snippets('typescriptreact', createFn)
+ls.add_snippets('typescript', createFn)
 
-ls.add_snippets('typescript', {
+ls.add_snippets('typescriptreact', createAsyncFn)
+ls.add_snippets('typescript', createAsyncFn)
+
+ls.add_snippets('typescriptreact', {
   s(
     'ctest', -- create base test
     fmt(
@@ -126,11 +118,11 @@ for _, element in ipairs(commonTags) do
   table.insert(snippets, createTag(element))
 end
 
-ls.add_snippets('typescript', snippets)
+ls.add_snippets('typescriptreact', snippets)
 
 ------------------------------------------------- LARGE SNIPPETS -----------------------------------------------
 
-ls.add_snippets('typescript', {
+ls.add_snippets('typescriptreact', {
   s(
     'mkcomp', -- make component
     fmt(
@@ -156,7 +148,7 @@ export const {}: FC<T{}> = (props) => {{
   ),
 })
 
-ls.add_snippets('typescript', {
+ls.add_snippets('typescriptreact', {
   s(
     'mktest', -- make new test
     fmt(
@@ -185,7 +177,7 @@ ls.add_snippets('typescript', {
 
 ---------------------------------- REACT QUERY SNIPPETS --------------------------------
 
-ls.add_snippets('typescript', {
+local creayeQuery = {
   s(
     'mkquery', --- useQuery
     fmt(
@@ -226,7 +218,9 @@ ls.add_snippets('typescript', {
       }
     )
   ),
-})
+}
+ls.add_snippets('typescriptreact', creayeQuery)
+ls.add_snippets('typescript', creayeQuery)
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
