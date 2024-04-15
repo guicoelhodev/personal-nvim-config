@@ -26,11 +26,8 @@ keymap.set('n', '<leader>g', ':LazyGit<CR>', opts)
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv' '>+1<CR>gv=gv'")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv' '<-2<CR>gv=gv' ")
 
--- format with coc-prettier
-vim.keymap.set('n', 'fm', ':CocCommand prettier.formatFile<CR>')
-
 -- format and save
-vim.keymap.set('n', '<C-s>', ':Neoformat<CR> :w<CR>')
+vim.keymap.set('n', '<C-s>', ':w<CR>')
 
 -- LSP and cmp
 local cmp = require 'cmp'
