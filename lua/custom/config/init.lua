@@ -37,4 +37,5 @@ return {
       vim.fn['mkdp#util#install']()
     end,
   },
+  { 'andweeb/presence.nvim', lazy = false },
 }
