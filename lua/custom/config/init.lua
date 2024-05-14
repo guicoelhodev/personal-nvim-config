@@ -38,4 +38,5 @@ return {
     end,
   },
   { 'andweeb/presence.nvim', lazy = false },
+  { 'smithbm2316/centerpad.nvim', lazy = false },
 }

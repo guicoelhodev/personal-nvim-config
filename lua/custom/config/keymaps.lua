@@ -29,7 +29,14 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv' '<-2<CR>gv=gv' ")
 -- format and save
 vim.keymap.set('n', '<C-s>', ':w<CR>')
 
--- LSP and cmp
+-- copy without lose the current past buffer
+
+vim.keymap.set('x', 'P', '"_dP')
+
+--test
+-- test-
+--
+--  PPPPPPPand cmp
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
