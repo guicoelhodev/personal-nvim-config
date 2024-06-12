@@ -32,7 +32,7 @@ ls.add_snippets('typescriptreact', {
 })
 
 local consoleLog = {
-  s('clog', fmt([[console.log('{}')]], { i(1, '') })),
+  s('clog', fmt([[console.log('{}', {})]], { i(1, ''), rep(1) })),
 }
 
 ls.add_snippets('typescriptreact', consoleLog)
@@ -61,7 +61,7 @@ local createFn = {
     'cfn', -- create function
     fmt(
       [[
-      const {} = (arg) => {{
+      function {} (arg) {{
 
       }};
     ]],
@@ -77,7 +77,7 @@ local createAsyncFn = {
     'cafn', -- create async function
     fmt(
       [[
-      const {} = async (arg) => {{
+      async function {} (arg) {{
 
       }};
     ]],
@@ -99,7 +99,7 @@ ls.add_snippets('typescriptreact', {
     fmt(
       [[
         it('{}', () => {{
-          
+
             const screen = screen(<{} />);
         }});
       ]],
@@ -111,7 +111,8 @@ ls.add_snippets('typescriptreact', {
 ------------------------------------------------- CREATE HTML TAGS ------------------------------------------
 
 local commonTags =
-  { 'div', 'section', 'article', 'header', 'footer', 'aside', 'main', 'ul', 'li', 'ol', 'p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'img' }
+{ 'div', 'section', 'article', 'header', 'footer', 'aside', 'main', 'ul', 'li', 'ol', 'p', 'span', 'h1', 'h2', 'h3', 'h4',
+  'h5', 'h6', 'img' }
 
 local snippets = {}
 
@@ -135,13 +136,14 @@ type T{} = {{}};
 export const {}: FC<T{}> = (props) => {{
   return (
     <div>
-
+      {}
     </div>
   );
 }};
       ]],
       {
         i(1, 'MyComponent'),
+        rep(1),
         rep(1),
         rep(1),
       }
@@ -186,7 +188,7 @@ local creayeQuery = {
 
         import {{ AxiosError }} from 'axios';
         import {{ useQuery }} from 'react-query';
-        
+
         type TParams = {{
 
         }};
