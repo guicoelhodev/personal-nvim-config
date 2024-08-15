@@ -9,7 +9,7 @@ local keymap = vim.keymap
 keymap.set('i', 'jj', '<ESC>', opts)
 
 -- replace content lke Ctrl + f vscode
-keymap.set('n', 'S', ':%s/\\C')
+keymap.set('n', 'T', ':%s/\\C')
 
 --- delete word and enter on insert mode
 keymap.set('n', 'C', 'ciw')
@@ -28,6 +28,8 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv' '<-2<CR>gv=gv' ")
 
 -- format and save
 vim.keymap.set('n', '<C-s>', ':w<CR>')
+
+vim.keymap.set('n', 'S', ':w<CR>')
 
 -- copy without lose the current past buffer
 
