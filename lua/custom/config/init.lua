@@ -1,9 +1,5 @@
 return {
   {
-    'nvim-telescope/telescope-file-browser.nvim',
-    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
-  },
-  {
     'folke/tokyonight.nvim',
     opts = {
       transparent = true,
@@ -28,7 +24,7 @@ return {
       require('telescope').load_extension 'lazygit'
     end,
   },
-  { 'sbdchd/neoformat',              lazy = false },
+  { 'sbdchd/neoformat', lazy = false },
   {
     'iamcco/markdown-preview.nvim',
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
@@ -37,14 +33,14 @@ return {
       vim.fn['mkdp#util#install']()
     end,
   },
-  { 'andweeb/presence.nvim',         lazy = false },
-  { 'smithbm2316/centerpad.nvim',    lazy = false },
+  { 'andweeb/presence.nvim', lazy = false },
+  { 'smithbm2316/centerpad.nvim', lazy = false },
   { 'barrett-ruth/live-server.nvim', lazy = false },
   {
     'nvimdev/lspsaga.nvim',
     dependencies = {
       'nvim-treesitter/nvim-treesitter', -- optional
-      'nvim-tree/nvim-web-devicons',     -- optional
+      'nvim-tree/nvim-web-devicons', -- optional
     },
-  }
+  },
 }
