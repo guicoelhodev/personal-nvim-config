@@ -9,7 +9,7 @@ keymap.set('n', 'fw', builtin.live_grep, { desc = '[S]earch by [G]rep' })
 
 -- telescope browser
 
-vim.api.nvim_set_keymap('n', 'ff', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', opts)
+-- vim.api.nvim_set_keymap('n', 'ff', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', opts)
 vim.api.nvim_set_keymap('n', 'fa', ':Telescope file_browser<CR>', opts)
 
 return {}

@@ -35,6 +35,8 @@ vim.keymap.set('n', 'S', ':w<CR>')
 
 vim.keymap.set('x', 'P', '"_dP')
 
+vim.keymap.set('n', 'E', '<CMD>:Ex ./<CR>')
+
 --test
 -- test-
 --
