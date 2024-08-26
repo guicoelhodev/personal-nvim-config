@@ -4,7 +4,7 @@ return {
   config = function()
     local keymap = vim.keymap
 
-    keymap.set('n', 'ff', '<CMD>Yazi<CR>')
+    keymap.set('n', 'fj', '<CMD>Yazi<CR>')
     keymap.set('n', 'fa', '<CMD>Yazi cwd<CR>')
   end,
   opts = {
